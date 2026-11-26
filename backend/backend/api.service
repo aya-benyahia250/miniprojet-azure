@@ -1,0 +1,12 @@
+[Unit]
+Description=API Flask
+After=network.target
+
+[Service]
+User=azureuser
+WorkingDirectory=/home/azureuser/api
+ExecStart=/home/azureuser/api/venv/bin/gunicorn -b 0.0.0.0:5000 app:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
