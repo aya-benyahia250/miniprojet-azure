@@ -1,0 +1,16 @@
+Host vm-web
+    HostName 70.156.9.25
+    User azureuser
+    IdentityFile C:\Users\ayabe\.ssh\key-vm-web.pem
+
+Host vm-app
+    HostName 10.2.1.4
+    User azureuser
+    IdentityFile C:\Users\ayabe\.ssh\vm-app_key.pem
+    ProxyJump vm-web
+
+Host vm-db
+    HostName 10.3.1.5
+    User azureuser
+    IdentityFile C:\Users\ayabe\.ssh\vmdb_key956.pem
+    ProxyJump vm-app
